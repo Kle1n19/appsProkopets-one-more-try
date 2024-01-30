@@ -1,6 +1,9 @@
 package ua.edu.ucu;
 
-import ua.edu.ucu.stream.*;
+import ua.edu.ucu.stream.IntStream;
+
+
+import ua.edu.ucu.stream.AsIntStream;
 
 public class StreamApp {
 
@@ -23,5 +26,17 @@ public class StreamApp {
         StringBuilder str = new StringBuilder();
         intStream.forEach(x -> str.append(x));
         return str.toString();
+    }
+    public static void Test(IntStream intStream){
+        System.out.println("Average: " + intStream.average());
+        System.out.println("Max: " + intStream.max());
+        System.out.println("Min: " + intStream.min());
+        System.out.println("Count: " + intStream.count());
+        System.out.println("Sum: " + intStream.sum());
+    }
+    public static void main(String[] args){
+        IntStream intStream = AsIntStream.of(-1, 0, 1, 2, 3);
+        Test(intStream);
+
     }
 }
